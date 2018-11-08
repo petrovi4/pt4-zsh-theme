@@ -1,6 +1,8 @@
 # Based on Bureau Theme
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/bureau.zsh-theme
 
+
+
 ### NVM
 
 ZSH_THEME_NVM_PROMPT_PREFIX="%B⬡%b "
@@ -78,10 +80,14 @@ bureau_git_prompt () {
 	echo $_result
 }
 
+### Colors
+my_red='$FG[202]'
 
-_PATH="%{$fg_bold[red]%}╭─ %~%{$reset_color%}"
 
-_USERNAME="%{$fg_bold[yellow]%}%n%{$fg[white]%}@%{$fg[cyan]%}%m%{$reset_color%}"
+
+_PATH="%{$FG[166]%}╭─ %~%{$reset_color%}"
+
+_USERNAME="%{$FG[155]%}%n%{$fg_bold[white]%}@%{$fg[cyan]%}%m%{$reset_color%}"
 
 
 get_space () {
@@ -109,7 +115,7 @@ bureau_precmd () {
 }
 
 setopt prompt_subst
-PROMPT='%{$fg_bold[red]%}╰─%{$reset_color%} '
+PROMPT='%{$FG[166]%}╰─%{$reset_color%} '
 RPROMPT='$(nvm_prompt_info) $(bureau_git_prompt)'
 
 autoload -U add-zsh-hook
